@@ -1,0 +1,20 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: ninho-postgres
+    environment:
+      POSTGRES_DB: ninho
+      POSTGRES_USER: ninho
+      POSTGRES_PASSWORD: ninho
+    ports:
+      - "${NINHO_DOCKER_DB_PORT:-55432}:5432"
+    volumes:
+      - ninho-pg:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ninho -d ninho"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+volumes:
+  ninho-pg:

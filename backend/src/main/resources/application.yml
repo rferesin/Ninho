@@ -1,0 +1,39 @@
+server:
+  port: 3001
+  error:
+    include-message: never
+    include-binding-errors: never
+
+spring:
+  application:
+    name: ninho-api
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/ninho}
+    username: ${SPRING_DATASOURCE_USERNAME:ninho}
+    password: ${SPRING_DATASOURCE_PASSWORD:ninho}
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 2
+      connection-timeout: 10000
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        jdbc:
+          time_zone: UTC
+        format_sql: true
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+    time-zone: UTC
+
+app:
+  jwt:
+    secret: ninho-local-dev-secret-key-must-be-at-least-256-bits-long-ok
+    expiration-ms: 86400000
+  cors:
+    allowed-origins: http://localhost:4200

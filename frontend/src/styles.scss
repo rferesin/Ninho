@@ -1,0 +1,259 @@
+:root {
+  --ink: #16382c;
+  --ink-soft: #4a5d54;
+  --paper: #f6f3ee;
+  --paper-2: #efe8dc;
+  --line: #d9d0c2;
+  --gold: #c4a35a;
+  --forest: #1f4e3d;
+  --forest-2: #2f6b4f;
+  --moss: #6b8f71;
+  --danger: #9b3d3d;
+  --ok: #2f6b4f;
+  --shadow: 0 18px 40px rgba(22, 56, 44, 0.08);
+  --radius: 18px;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(1200px 500px at 10% -10%, rgba(196, 163, 90, 0.16), transparent 55%),
+    radial-gradient(900px 420px at 100% 0%, rgba(47, 107, 79, 0.12), transparent 50%),
+    var(--paper);
+  color: var(--ink);
+  font-family: "DM Sans", system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3,
+.display,
+.brand-mark {
+  font-family: "Fraunces", Georgia, serif;
+  letter-spacing: -0.03em;
+}
+
+a {
+  color: var(--forest);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--forest-2);
+}
+
+.page-shell {
+  min-height: 100vh;
+}
+
+.app-sidebar {
+  width: 260px;
+  background: var(--forest);
+  color: #f6f3ee;
+  min-height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+.app-sidebar a {
+  color: rgba(246, 243, 238, 0.78);
+  border-radius: 12px;
+  padding: 0.7rem 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.app-sidebar a.active,
+.app-sidebar a:hover {
+  background: rgba(246, 243, 238, 0.1);
+  color: #fff;
+}
+
+.brand-mark {
+  font-size: 1.55rem;
+  color: #fff;
+}
+
+.brand-sub {
+  color: rgba(246, 243, 238, 0.62);
+  font-size: 0.82rem;
+}
+
+.surface {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.metric-label {
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.btn-forest {
+  background: var(--forest);
+  border-color: var(--forest);
+  color: #fff;
+}
+
+.btn-forest:hover,
+.btn-forest:focus {
+  background: var(--forest-2);
+  border-color: var(--forest-2);
+  color: #fff;
+}
+
+.btn-gold {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #16382c;
+  font-weight: 600;
+}
+
+.btn-gold:hover,
+.btn-gold:focus {
+  background: #b39248;
+  border-color: #b39248;
+  color: #16382c;
+}
+
+.btn-ghost {
+  border: 1px solid var(--line);
+  color: var(--ink);
+  background: transparent;
+}
+
+.form-control,
+.form-select {
+  border-color: var(--line);
+  border-radius: 12px;
+  padding: 0.7rem 0.9rem;
+  background: #fff;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--forest-2);
+  box-shadow: 0 0 0 0.2rem rgba(31, 78, 61, 0.12);
+}
+
+.form-label {
+  font-weight: 600;
+  font-size: 0.86rem;
+  color: var(--ink-soft);
+}
+
+.progress {
+  height: 8px;
+  background: var(--paper-2);
+  border-radius: 99px;
+}
+
+.progress-bar {
+  background: var(--forest-2);
+}
+
+.badge-soft {
+  background: var(--paper-2);
+  color: var(--ink);
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+}
+
+.badge-active {
+  background: rgba(47, 107, 79, 0.12);
+  color: var(--forest);
+}
+
+.badge-paused {
+  background: rgba(196, 163, 90, 0.18);
+  color: #8c6a3c;
+}
+
+.badge-completed {
+  background: rgba(31, 78, 61, 0.16);
+  color: var(--forest);
+}
+
+.table {
+  --bs-table-bg: transparent;
+}
+
+.table th {
+  color: var(--ink-soft);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-color: var(--line);
+}
+
+.table td {
+  vertical-align: middle;
+  border-color: var(--line);
+}
+
+.auth-hero {
+  min-height: 100vh;
+  background:
+    linear-gradient(160deg, rgba(22, 56, 44, 0.88), rgba(31, 78, 61, 0.72)),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cpath d='M20 120c20-50 50-80 60-80s40 30 60 80' fill='none' stroke='%23c4a35a' stroke-width='2' opacity='.18'/%3E%3C/svg%3E");
+  color: #f6f3ee;
+}
+
+.auth-card {
+  max-width: 440px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.empty-state {
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  color: var(--ink-soft);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.amount-in {
+  color: var(--ok);
+  font-weight: 600;
+}
+
+.amount-out {
+  color: var(--danger);
+  font-weight: 600;
+}
+
+.page-title {
+  font-size: 2rem;
+}
+
+.muted {
+  color: var(--ink-soft);
+}
+
+@media (max-width: 991.98px) {
+  .app-sidebar {
+    width: 100%;
+    min-height: auto;
+    position: relative;
+  }
+}
